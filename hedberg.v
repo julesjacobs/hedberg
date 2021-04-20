@@ -7,6 +7,8 @@ Section Hedberg.
   Definition clas (P : Prop) := ¬ ¬ P -> P.
   Definition dec (P : Prop) := {P} + {¬ P}.
 
+  (* We assume that the (x = y) type is classical.
+  (This is an assumption of the theorem) *)
   Definition emb {x y : A} : clas (x = y). Admitted.
   Definition proj {P : Prop} : P -> ¬ ¬ P := λ p f, f p.
 
